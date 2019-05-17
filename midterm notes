@@ -1,0 +1,48 @@
+State Space search:
+ - State Space: list of possible states in which the problem needs to be solved.
+ - search state only has details needed for planning.
+ - Successor Function:
+ - Start
+ - Goal
+
+Types of Agents:
+ - reflex: base decisions on current percepts & KB; do not consider future
+ - planning: hypothesized consequences + reflex; plans can be (sub)optimal, (re)planning agent, & (un)finished; must have idea of response from world & goal
+
+Uninformed Search Algorithms
+ Key Properties in SA's:
+ - Complete: guaranteed solution?
+ - Optimal: guaranteed lowest cost sol?
+ - Time: complexity?
+ - Space: complexity?
+ DFS
+  - Expand deepest node 1st
+  - fringe := LIFO (stack)
+  - Space: O( bm ) : solution path (m) + unexpanded siblings (bm)
+  - Time: O( b^m ) : may process entire tree
+  - Complete: only if m is finite
+  - Optimal: No, finds leftmost solution
+ BFS
+  - Expand shallowest node 1st
+  - fringe := FIFO (queue)
+  - Space: O( b^s ) : dominated by last searched layer; s = depth of shallowest sol.
+  - Time: O( b^m ) : ''
+  - Complete: yes, Exists(Solution) => finite(s)
+  - Optimal: only if equal costs
+ Iterative Deepening Search (IDS)
+ - combines DFS space advantage w/ BFS time/shallow solution advantage
+ - fun DFS with depth limit until solution found
+ - O( b^s )
+ Uniform Cost Search ( UCS )
+ - when nodes have costs associated with nodes, different approach.
+ - expand the cheapest costing nodes first.
+ - fringe := priority queue
+ - Space: O( b^(C*/ε) )
+   - C* = sol cost
+   - b = avg branching factor
+   - ε = minimum arc cost
+ - Time: "
+ - Optimal: Yes
+ - Complete: yes if ε > 0 & C* != ∞
+ - Searches in all directions though; doesn't use goal to determine where it should go.
+
