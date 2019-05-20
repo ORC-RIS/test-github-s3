@@ -1,0 +1,19 @@
+/* Evaluation Procedure:
+
+    - Try to stay depth + 1 tiles away from ghosts.
+    	find bfspath to both ghosts
+	    if (ghosts are closer than safe dist):
+	    	find the closest big pellet as possible 
+	    	take path that increases dist from ghosts the most (blinky, THEN inky)
+
+	    else:
+			set path to the closest pellets available
+
+    Blinky: Follows Pacman
+
+    Inky: goes for opposite side of pacman as blinky
+    TODO:
+    	- Find pacmans location
+    	- Find pacman's direction
+    	- aim for the tile n (depth) steps ahead of pacman
+*/
